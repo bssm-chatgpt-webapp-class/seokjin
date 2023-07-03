@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { ChatItem } from "./index";
 import { chatGPTImageLink, profileImageLink } from "../fixtures";
 
-const Main = () => {
+const Main = ({ currentQuestion }) => {
   return (
     <StyledMain
       style={{
@@ -10,7 +10,7 @@ const Main = () => {
         overfloY: "scroll",
       }}
     >
-      <ChatItem text="어절 방구" imgLink={profileImageLink} />
+      <ChatItem text={currentQuestion} imgLink={profileImageLink} />
       <ChatItem
         text={`코딩을 잘하기 위해서는 몇 가지 중요한 원칙과 핵심 개념을 이해하고 실전적인 경험을 쌓는 것이 중요합니다. 아래에 코딩을 잘하는 법에 대해 몇 가지 팁을 제시해 드리겠습니다.
 

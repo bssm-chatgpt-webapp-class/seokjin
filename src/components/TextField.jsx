@@ -1,6 +1,6 @@
 import { SendIcon } from "./Icons";
 
-const TextField = () => {
+const TextField = ({ message, setMessage, onClick }) => {
   return (
     <div
       style={{
@@ -11,8 +11,12 @@ const TextField = () => {
         bottom: 0,
       }}
     >
-      <input placeholder="입력해." />
-      <SendIcon />
+      <input
+        placeholder="입력해."
+        onChange={(e) => setMessage(e.target.value)}
+        value={message}
+      />
+      <SendIcon onClick={onClick} />
     </div>
   );
 };
