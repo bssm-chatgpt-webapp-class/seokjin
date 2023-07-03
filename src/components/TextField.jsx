@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { SendIcon } from "./Icons";
 
-const TextField = ({ message, setMessage, onClick }) => {
+const TextField = ({ setMessage }) => {
+  const [currentMessage, setCurrentMessage] = useState("");
   return (
     <div
       style={{
@@ -13,10 +15,10 @@ const TextField = ({ message, setMessage, onClick }) => {
     >
       <input
         placeholder="입력해."
-        onChange={(e) => setMessage(e.target.value)}
-        value={message}
+        onChange={(e) => setCurrentMessage(e.target.value)}
+        value={currentMessage}
       />
-      <SendIcon onClick={onClick} />
+      <SendIcon onClick={() => setMessage(currentMessage)} />
     </div>
   );
 };
