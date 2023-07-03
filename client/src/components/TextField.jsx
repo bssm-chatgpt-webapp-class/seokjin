@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { SendIcon } from "./Icons";
 
-const TextField = ({ setMessage }) => {
+const TextField = ({ setMessage, sendChat }) => {
   const [currentMessage, setCurrentMessage] = useState("");
   return (
     <div
@@ -18,7 +18,11 @@ const TextField = ({ setMessage }) => {
         onChange={(e) => setCurrentMessage(e.target.value)}
         value={currentMessage}
       />
-      <SendIcon onClick={() => setMessage(currentMessage)} />
+      <SendIcon
+        onClick={() => {
+          sendChat(currentMessage);
+        }}
+      />
     </div>
   );
 };
