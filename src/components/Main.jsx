@@ -1,7 +1,16 @@
 import styled from "styled-components";
+import { ChatItem } from "./index";
+import { profileImageLink } from "../fixtures";
 
 const Main = () => {
-  return <StyledMain>as</StyledMain>;
+  return (
+    <StyledMain>
+      <ChatItem text="어절 방구" imgLink={profileImageLink} />
+      <ChatItem text="어절 방구" imgLink={profileImageLink} />
+      <ChatItem text="어절 방구" imgLink={profileImageLink} />
+      <ChatItem text="어절 방구" imgLink={profileImageLink} />
+    </StyledMain>
+  );
 };
 
 export default Main;
