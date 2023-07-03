@@ -15,8 +15,6 @@ const App = () => {
         ...prev,
         { isMine: false, message: data.replace("response:", "") },
       ]);
-
-      console.log(data);
     });
   }, []);
   const sendChat = (message) => {
