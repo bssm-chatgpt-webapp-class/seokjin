@@ -1,6 +1,7 @@
 const express = require("express");
 const { getConnection } = require("../models/connector");
 const jwt = require("jsonwebtoken");
+const { jwtSecret } = require("../config/env");
 const router = express.Router();
 
 router.post("/signin", async (req, res) => {
@@ -14,10 +15,7 @@ router.post("/signin", async (req, res) => {
     return res.json("no user");
   }
 
-  const token = jwt.sign(
-    { id: results[0].id, pw: results[0].pw },
-    process.env.JWT_SECRET
-  );
+  const token = jwt.sign({ id: results[0].id, pw: results[0].pw }, jwtSecret);
   res.json(token);
 });
 

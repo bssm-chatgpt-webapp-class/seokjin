@@ -1,5 +1,6 @@
 // get the client
 const mysql = require("mysql2/promise");
+const { dbPw } = require("../config/env");
 
 let connection;
 // create the connection to database
@@ -8,7 +9,7 @@ const connect = async () => {
     connection = await mysql.createConnection({
       host: "localhost",
       user: "root",
-      password: process.env.DATABASE_PASSWORD,
+      password: dbPw,
       database: "mytodo",
     });
   }
